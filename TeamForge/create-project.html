@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamForge - Create Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="index.html">TeamForge</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#projects">Explore Projects</a>
+            <a class="active" href="create-project.html">Create Project</a>
+        </nav>
+        <div class="nav-buttons">
+            <button class="login-btn" id="login-btn">Login</button>
+            <button class="signup-btn" id="signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="create-project">
+            <div class="form-container">
+                <div class="section-heading">
+                    <p class="section-tag">TEAMFORGE</p>
+                    <h1>Create Your Project</h1>
+                    <p>Share your idea and tell people what kind of teammate you are looking for.</p>
+                </div>
+
+                <form id="project-form">
+                    <div class="form-group">
+                        <label for="project-name">Project Name</label>
+                        <input type="text" id="project-name" placeholder="e.g. AI Study Assistant" maxlength="60" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-description">Description</label>
+                        <textarea id="project-description" placeholder="What are you building?" rows="5" maxlength="400" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-category">Category</label>
+                        <select id="project-category">
+                            <option>Web Development</option>
+                            <option>Artificial Intelligence</option>
+                            <option>Machine Learning</option>
+                            <option>IoT</option>
+                            <option>App Development</option>
+                            <option>Cybersecurity</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-skills">Required Skills</label>
+                        <input type="text" id="project-skills" placeholder="e.g. Python, React, UI/UX" required>
+                        <small>Separate skills with commas.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project-members">Members Needed</label>
+                        <input type="number" id="project-members" min="1" max="20" value="1" required>
+                    </div>
+
+                    <button type="submit" class="primary-btn create-btn">Create Project</button>
+                    <a class="back-link" href="index.html">← Back to projects</a>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 TeamForge. Built for student creators.</p>
+    </footer>
+
+    <div class="modal" id="auth-modal" aria-hidden="true">
+        <div class="modal-content auth-box">
+            <button class="close-btn" id="close-auth" aria-label="Close">&times;</button>
+            <p class="modal-category" id="auth-mode-label">TEAMFORGE</p>
+            <h2 id="auth-title">Log in</h2>
+            <form id="auth-form">
+                <label for="auth-name" id="auth-name-label">Name</label>
+                <input id="auth-name" type="text" autocomplete="name">
+                <label for="auth-email">Email</label>
+                <input id="auth-email" type="email" autocomplete="email" required>
+                <label for="auth-password">Password</label>
+                <input id="auth-password" type="password" autocomplete="current-password" minlength="6" required>
+                <button class="primary-btn form-submit" type="submit" id="auth-submit">Log in</button>
+            </form>
+            <p class="auth-switch" id="auth-switch"></p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>

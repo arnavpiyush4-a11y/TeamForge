@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamForge - Find Your Team</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="index.html">TeamForge</a>
+        <nav>
+            <a class="active" href="index.html">Home</a>
+            <a href="#projects">Explore Projects</a>
+            <a href="create-project.html">Create Project</a>
+        </nav>
+        <div class="nav-buttons">
+            <button class="login-btn" id="login-btn">Login</button>
+            <button class="signup-btn" id="signup-btn">Sign Up</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="tagline">BUILD • CONNECT • CREATE</p>
+                <h1>Build Something.<br>Find Your Team.</h1>
+                <p class="hero-description">
+                    Have an idea but need the right people? Find students with the skills,
+                    interests and motivation to build it with you.
+                </p>
+                <div class="hero-buttons">
+                    <a class="primary-btn" href="#projects">Explore Projects</a>
+                    <a class="secondary-btn" href="create-project.html">Create a Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="section-heading">
+                <p class="section-tag">DISCOVER</p>
+                <h2>Student Projects</h2>
+                <p>Browse projects looking for teammates and find one that matches your skills.</p>
+            </div>
+
+            <div class="project-tools">
+                <input id="project-search" type="search" placeholder="Search projects or skills...">
+                <select id="category-filter">
+                    <option value="all">All categories</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="IoT">IoT</option>
+                    <option value="App Development">App Development</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                </select>
+            </div>
+
+            <div class="project-container" id="project-container"></div>
+            <p class="empty-state" id="empty-state">No projects found. Try another search.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 TeamForge. Built for student creators.</p>
+    </footer>
+
+    <div class="modal" id="project-modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-btn" id="close-modal" aria-label="Close">&times;</button>
+            <p class="modal-category" id="modal-category"></p>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <h3>Required Skills</h3>
+            <div class="modal-skills" id="modal-skills"></div>
+            <p class="modal-members" id="modal-members"></p>
+            <button class="join-btn" id="join-btn">Request to Join</button>
+        </div>
+    </div>
+
+    <div class="modal" id="auth-modal" aria-hidden="true">
+        <div class="modal-content auth-box">
+            <button class="close-btn" id="close-auth" aria-label="Close">&times;</button>
+            <p class="modal-category" id="auth-mode-label">TEAMFORGE</p>
+            <h2 id="auth-title">Log in</h2>
+            <form id="auth-form">
+                <label for="auth-name" id="auth-name-label">Name</label>
+                <input id="auth-name" type="text" autocomplete="name">
+                <label for="auth-email">Email</label>
+                <input id="auth-email" type="email" autocomplete="email" required>
+                <label for="auth-password">Password</label>
+                <input id="auth-password" type="password" autocomplete="current-password" minlength="6" required>
+                <button class="primary-btn form-submit" type="submit" id="auth-submit">Log in</button>
+            </form>
+            <p class="auth-switch" id="auth-switch"></p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
