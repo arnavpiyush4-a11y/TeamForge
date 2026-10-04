@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="TeamForge — find the right people to build ambitious student projects." />
+  <title>TeamForge — Build better, together.</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="page-grid"></div>
+
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" data-route="home" aria-label="TeamForge home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>Team<span class="brand-accent">Forge</span></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="#home" data-route="home">Home</a>
+      <a href="#explore" data-route="explore">Explore</a>
+      <a href="#teams" data-route="teams">Teams</a>
+      <a href="#dashboard" data-route="dashboard">Dashboard</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn notification-btn" id="notification-btn" title="Notifications" aria-label="Notifications">
+        <span class="icon icon-bell"></span><span class="notification-dot" id="notification-dot"></span>
+      </button>
+      <button class="avatar avatar-small" id="profile-btn" title="Profile">AP</button>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <main id="app" class="app-shell"></main>
+
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Dialog">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="command-palette" id="command-palette" aria-hidden="true">
+    <div class="palette-card">
+      <div class="palette-search"><span class="icon icon-search"></span><input id="palette-input" placeholder="Search projects, skills, people…" /></div>
+      <div id="palette-results"></div>
+      <div class="palette-hint"><kbd>Esc</kbd> close <span></span> <kbd>Enter</kbd> open</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
